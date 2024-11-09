@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract TokenSale is ReentrancyGuard, Ownable {
     IERC20 public token;
     uint256 public constant RATE = 100; 
-    uint256 public constant RELEASE_DELAY = 1 minutes;
+    uint256 public constant RELEASE_DELAY = 365 minutes;
 
     struct Purchase {
         uint256 amount;
