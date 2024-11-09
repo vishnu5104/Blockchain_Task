@@ -41,7 +41,7 @@ contract TokenSale is ReentrancyGuard, Ownable {
     function releaseTokens() public nonReentrant {
         Purchase storage purchase = purchases[msg.sender];
         require(purchase.amount > 0, "No tokens to release");
-        require(block.timestamp >= purchase.releaseTime, "Tokens are not ready for release yet");
+        require(block.timestamp >= purchase.releaseTime, "tokens are still locked");
 
         uint256 amount = purchase.amount;
         purchase.amount = 0;
